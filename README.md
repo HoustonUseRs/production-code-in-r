@@ -1,22 +1,4 @@
-# Upcoming
-
-* git workshop
-* data jam & showcase
-
-# Trivia
-
-* Hadley started Houston useRs was a mailing list
-* Ed ran into ggplot and seeing Hadley's name everywhere
-* Ed made the group meet
-  * 7 - 8 ppl
-  * first at a bar
-  * then Rice classroom
-* yay history!
-
-
 # Production ready R
-
-* joke about not knowing much about this
 
 * How do you write robust, readable code
   * Programming
@@ -24,10 +6,10 @@
   * Software engineering
     * global, project-level
 
-how to write analysis that can run again and again
+**how to write analysis that can run again and again**
 
 # Programming
-* **Principle** -- less context needed = clearer code
+* **Principle** -- less outside context needed = clearer code
   ```
   baz <- foo(bar, qux)
   ```
@@ -35,9 +17,11 @@ how to write analysis that can run again and again
   df2 <- arrange(df, qux)
   ```
 
-  * NAMES
+# Naming of variables and functions
   * programming is both about talking to computers and talking to people
   * collaboration with future you/others
+
+# Some potential gotchas
 
   ```
   df[, vars]  # type unstable -- you have to know if vars if one or multiple, could get dataframe or vector
@@ -77,7 +61,6 @@ type of output should not depend on input
 because of how r handles scoping?
 
 * functions should fail early if there's a problem
-
 * specify/make it explicit
 
 
@@ -97,7 +80,7 @@ dplyr is stricter
 "At the heart of R, theres a tension ...trying to be helpful and guess at what you want? or a programming language where it should fail early and make you aware of problems"
 
 
--- q -- dataframe in dplyr
+Question: dataframe in dplyr
 dply dataframe overrides print and subsetting, ignores drop=FALSE
 
 # Software engineering
@@ -185,8 +168,6 @@ dply dataframe overrides print and subsetting, ignores drop=FALSE
 
 # Rapidfire questions
 
-* best ____
-
 * proudest package
   * ggplot2
 
@@ -196,7 +177,8 @@ dply dataframe overrides print and subsetting, ignores drop=FALSE
 * best hangout in Houston
   * double trouble
 
-* Red Sox or ___
+* Red Sox or Astros
+  * neither
 
 * beach or mountain
   * beach
