@@ -17,11 +17,11 @@
   df2 <- arrange(df, qux)
   ```
 
-# Naming of variables and functions
+## Naming of variables and functions
   * programming is both about talking to computers and talking to people
   * collaboration with future you/others
 
-# Some potential gotchas
+## Some potential gotchas
 
   ```
   df[, vars]  # type unstable -- you have to know if vars if one or multiple, could get dataframe or vector
@@ -29,7 +29,7 @@
   data.frame(x = "a") # data frame with one column, value depends on some global value
   ```
 
-# 3 classes of surprises
+## 3 classes of surprises
 
 * unstable types, non-standard evalution, hidden arguments
 
@@ -56,7 +56,7 @@ library(purrr)
 type of output should not depend on input
 
 
-# non-standard
+## non-standard
 
 because of how r handles scoping?
 
@@ -64,7 +64,7 @@ because of how r handles scoping?
 * specify/make it explicit
 
 
-# offenders of hidden arguments
+## offenders of hidden arguments
 
 * `stringAsFactors` - causes weird effects
 * system language
@@ -87,14 +87,14 @@ dply dataframe overrides print and subsetting, ignores drop=FALSE
 
 "I've never done a data analysis in production...some things I think and some things friends have told me"
 
-# "In Production"
+## "In Production"
 
 * not just a static report
 * when you're running it again and again
 * kinda like reproducible research
   * timescale is different, more often
 
-# Isolation
+## Isolation
 
 * different projects depending on different versions of packages
 * libraries vs. packages
@@ -108,7 +108,7 @@ dply dataframe overrides print and subsetting, ignores drop=FALSE
   * checkpoint dependent on daily snapshots of CRAN
 * Renv for specifying versions of R
 
-# Verification
+## Verification
 
 * automate things
 * Use knitr/rmarkdown
@@ -118,14 +118,14 @@ dply dataframe overrides print and subsetting, ignores drop=FALSE
 * tests for fragile analysis paths
   * assertr, etc.
 
-# Documentation
+## Documentation
 
 * rmarkdown/knitr
   * The [`spin`](http://deanattali.com/2015/03/24/knitrs-best-hidden-gem-spin/) function is useful
     * Where code is the main focus, and markdown is in comments for code
 * rStudio connect [beta](https://www.rstudio.com/rstudio-connect-beta/) -- publish and share within company
 
-# Other things to consider
+## Other things to consider
 
 * Continuous integration?
 * Build automation?

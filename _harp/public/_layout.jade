@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        != partial("_partials/head")
+
+    body
+
+        header
+            != partial("_partials/header")
+
+        main
+            .container-fluid
+                .row
+                    .col-sm-2
+                        != partial("_partials/navigation")
+
+                    .col-sm-10
+                        != yield
+
+        footer
+            != partial("_partials/footer")

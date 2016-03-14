@@ -1,0 +1,120 @@
+<!DOCTYPE html><html><head><meta charset="utf8"/><title>Production Code in R</title><link rel="stylesheet" href="//houstonusers.github.io/production-code-in-r/css/global.css"/><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro|Merriweather:400,300,700,900,300italic,400italic,700italic,900italic|Raleway:400,900,800,700,600,500,300,200,100"/><script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.2.1/lodash.min.js"></script><script src="//houstonusers.github.io/production-code-in-r/js/main.js"></script></head><body><header><nav role="navigation" class="navbar navbar-default navbar-fixed-top"><div class="container-fluid"><div class="navbar-header"><button data-toggle="collapse" data-target="#navbar-top-collapse-1" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="//houstonusers.github.io/production-code-in-r/" class="navbar-brand">Production Code in R</a></div><div id="navbar-top-collapse-1" class="collapse navbar-collapse"><ul class="nav navbar-nav navbar-right"><li><a href="http://www.meetup.com/houstonr/events/227950604/">Meetup</a></li><li><a href="https://houstonusers.github.io/">About Us</a></li><li><a href="https://hrug.slack.com">Slack</a></li></ul></div></div></nav></header><main><div class="container-fluid"><div class="row"><div class="col-sm-2"><ul class="nav nav-pills nav-stacked nav-docs fixed"><li><a href="//houstonusers.github.io/production-code-in-r/">Notes</a><ul class="nav nav-pills nav-stacked"></ul></li></ul></div><div class="col-sm-10"><article class="article-docs container-fluid"><div class="row"><h1>Crickets</h1><div class="col-sm-6"><h2>Code</h2><pre><code>---
+title: "crickets"
+author: "neeraj"
+date: "February 2, 2016"
+output: html_document
+---
+
+# Crickets dataset
+
+## Our question: Do crickets chirp more when it is hotter?
+
+### Striped Ground Crickets
+
+&lt;img src='http://previews.123rf.com/images/izakowski/izakowski1012/izakowski101200030/8489857-funny-grasshopper-Stock-Vector-cartoon-cricket-grasshopper.jpg' width='400'/&gt;
+
+## What do they sound like?
+&lt;iframe src="http://player.vimeo.com/video/81114843" height="200" width="680" allowfullscreen="" frameborder="0"&gt;&lt;/iframe&gt;
+
+## Taking a look at the data
+
+```{r}
+require(ggplot2)
+d &lt;- read.table('crickets.csv', sep=',', header=TRUE)
+
+d &lt;- d[1:5, ]
+print(d)
+```
+
+## scatterplot of temperature by chirps per second
+
+```{r}
+ggplot(data=d, aes(x=Chirpspersecond, y=Temperature)) + geom_point() + geom_smooth(method='lm', se=FALSE)
+```
+
+## Are temperature and chirps per second related?
+
+```{r}
+mod &lt;- lm(Temperature ~ Chirpspersecond, data=d)
+```
+
+
+```{r results='asis'}
+require(stargazer)
+
+stargazer(mod, type='html')
+```
+</code></pre></div><div class="col-sm-6"><h2>Output</h2><iframe src="//houstonusers.github.io/production-code-in-r/examples/crickets/" frameborder="none" width="100%" onload="iframeLoaded(this)"></iframe></div></div><div class="row"><h1>Stackoverflow Answer</h1><ul><li>Used<a href="http://www.humanconnectomeproject.org/about/"> Human Connectome</a> data to run analysis in R</li><li>Wrote up answer in Rmarkdown</li><li><a href="http://health.stackexchange.com/questions/4413/how-much-of-the-difference-in-brain-size-is-attributable-to-gender-not-physical#tab-top">View Here</a></li></ul></div><div class="row"><h1>Slides</h1><div class="col-sm-6"><h2>Code</h2><pre><code>---
+title: 'knitr: literate programming in R'
+author: "Neeraj"
+date: "January 28, 2016"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+* History
+* Knitr basics
+* Examples
+
+## Literate Programming
+
+I believe that the time is ripe for significantly better documentation of programs, and that we can best achieve this by considering programs to be works of literature. Hence, my title: "Literate Programming."...
+
+The practitioner of literate programming can be regarded as an essayist, whose main concern is with exposition and excellence of style. Such an author, with thesaurus in hand, chooses the names of variables carefully and explains what each variable means. He or she strives for a program that is comprehensible because its concepts have been introduced in an order that is best for human understanding, using a mixture of formal and informal methods that reinforce each other.
+
+-Donald Knuth, Literate Programming (1984)
+
+## Literate Programming
+
+I believe that the time is ripe for significantly better documentation of programs, and that we can best achieve this by considering programs to be works of literature. &lt;span style="opacity:0.25"&gt;Hence, my title: "Literate Programming." ...&lt;/span&gt;
+
+
+
+&lt;span style="opacity:0.25"&gt;The practitioner of literate programming can be regarded as an essayist, whose main concern is with exposition and excellence of style. Such an author, with thesaurus in hand, chooses the names of variables carefully and explains what each variable means. &lt;/span&gt; He or she strives for a program that is comprehensible because its concepts have been introduced in an order that is best for human understanding, &lt;span style="opacity:0.25"&gt; using a mixture of formal and informal methods that reinforce each other. &lt;/span&gt;
+
+-Donald Knuth, Literate Programming (1984)
+
+## TeX
+
+Author: **Donald Knuth**
+
+Originally introduced in **1978**
+
+Current version (2014): **3.14159265**
+
+
+## WEB/CWEB/noweb
+
+- TANGLE
+  - `foo.m -&gt; foo.c`
+- WEAVE
+  - `foo.m -&gt; foo.tex`
+  
+## Sweave
+
+- Sweave
+  - `foo.Rnw -&gt; foo.tex`
+
+
+## Markdown
+![markdown example](http://cdn.macreview.com/wp-content/uploads/2013/02/Markdown-Pro-scr1.jpg)
+
+## Pandoc
+
+[pandoc](http://cache.preserve.io/rcwzwc0s/assets/3ec3be049db301203fc6338efbcb0ef4.png)
+
+## Knitr
+
+### A basic example
+
+## More examples
+
+## Reproducible research
+
+[CRAN Task View](https://cran.r-project.org/web/views/ReproducibleResearch.html)
+</code></pre></div><div class="col-sm-6"><h2>Output</h2><iframe src="//houstonusers.github.io/production-code-in-r/examples/slides/" frameborder="none" onload="iframeLoaded(this)" class="zoom-frame"></iframe></div></div></article></div></div></div></main><footer><a href="https://github.com/houstonusers/production-code-in-r">Github</a></footer></body></html>

@@ -1,0 +1,10 @@
+{
+  "globals": {
+    "baseUrl": "//houstonusers.github.io/production-code-in-r",
+    "name": "Production Code in R",
+    "slack": "https://hrug.slack.com",
+    "eventPage": "http://www.meetup.com/houstonr/events/227950604/",
+    "page": "https://houstonusers.github.io/",
+    "githubRepo": "https://github.com/houstonusers/production-code-in-r"
+  }
+}

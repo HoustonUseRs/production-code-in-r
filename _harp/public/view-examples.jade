@@ -1,0 +1,30 @@
+article.article-docs.container-fluid
+  .row
+    h1 Crickets
+    .col-sm-6
+      h2 Code
+      pre
+        code
+          include ./examples/crickets/includable.Rmd
+    .col-sm-6
+      h2 Output
+      iframe(src="#{baseUrl}/examples/crickets/", frameborder="none", width="100%", onload="iframeLoaded(this)")
+  .row
+    h1 Stackoverflow Answer
+    ul
+      li Used
+        a(href="http://www.humanconnectomeproject.org/about/")  Human Connectome
+        |  data to run analysis in R
+      li Wrote up answer in Rmarkdown
+      li
+        a(href="http://health.stackexchange.com/questions/4413/how-much-of-the-difference-in-brain-size-is-attributable-to-gender-not-physical#tab-top") View Here
+  .row
+    h1 Slides
+    .col-sm-6
+      h2 Code
+      pre
+        code
+          include ./examples/slides/includable.Rmd
+    .col-sm-6
+      h2 Output
+      iframe.zoom-frame(src="#{baseUrl}/examples/slides/", frameborder="none", onload="iframeLoaded(this)")

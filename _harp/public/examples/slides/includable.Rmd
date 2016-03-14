@@ -1,0 +1,73 @@
+---
+title: 'knitr: literate programming in R'
+author: "Neeraj"
+date: "January 28, 2016"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+* History
+* Knitr basics
+* Examples
+
+## Literate Programming
+
+I believe that the time is ripe for significantly better documentation of programs, and that we can best achieve this by considering programs to be works of literature. Hence, my title: "Literate Programming."...
+
+The practitioner of literate programming can be regarded as an essayist, whose main concern is with exposition and excellence of style. Such an author, with thesaurus in hand, chooses the names of variables carefully and explains what each variable means. He or she strives for a program that is comprehensible because its concepts have been introduced in an order that is best for human understanding, using a mixture of formal and informal methods that reinforce each other.
+
+-Donald Knuth, Literate Programming (1984)
+
+## Literate Programming
+
+I believe that the time is ripe for significantly better documentation of programs, and that we can best achieve this by considering programs to be works of literature. &lt;span style="opacity:0.25"&gt;Hence, my title: "Literate Programming." ...&lt;/span&gt;
+
+
+
+&lt;span style="opacity:0.25"&gt;The practitioner of literate programming can be regarded as an essayist, whose main concern is with exposition and excellence of style. Such an author, with thesaurus in hand, chooses the names of variables carefully and explains what each variable means. &lt;/span&gt; He or she strives for a program that is comprehensible because its concepts have been introduced in an order that is best for human understanding, &lt;span style="opacity:0.25"&gt; using a mixture of formal and informal methods that reinforce each other. &lt;/span&gt;
+
+-Donald Knuth, Literate Programming (1984)
+
+## TeX
+
+Author: **Donald Knuth**
+
+Originally introduced in **1978**
+
+Current version (2014): **3.14159265**
+
+
+## WEB/CWEB/noweb
+
+- TANGLE
+  - `foo.m -&gt; foo.c`
+- WEAVE
+  - `foo.m -&gt; foo.tex`
+  
+## Sweave
+
+- Sweave
+  - `foo.Rnw -&gt; foo.tex`
+
+
+## Markdown
+![markdown example](http://cdn.macreview.com/wp-content/uploads/2013/02/Markdown-Pro-scr1.jpg)
+
+## Pandoc
+
+[pandoc](http://cache.preserve.io/rcwzwc0s/assets/3ec3be049db301203fc6338efbcb0ef4.png)
+
+## Knitr
+
+### A basic example
+
+## More examples
+
+## Reproducible research
+
+[CRAN Task View](https://cran.r-project.org/web/views/ReproducibleResearch.html)
