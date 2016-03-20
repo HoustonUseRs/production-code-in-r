@@ -55,7 +55,7 @@ function iframeLoaded(iframe) {
       activeLink = _.find(headingsInfo, {top: top});
 
       if(activeLink.hash != location.hash){
-        history.pushState(null, null, activeLink.hash);
+        history.replaceState(null, null, activeLink.hash);
         setActiveToHash(tocSelector);
       }
     }
